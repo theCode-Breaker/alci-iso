@@ -35,5 +35,5 @@ jobs:
           prerelease: false
           title: "ALCI-Runit"
           files: |
-            out/*
+            ./artools-workspace/iso/base/
             
