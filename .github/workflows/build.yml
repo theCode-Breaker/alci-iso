@@ -25,7 +25,11 @@ jobs:
         run: pacman -Syu --noconfirm git squashfs-tools
 
       - name: Build ISO
-        run: ./build.sh
+        run: |
+         pacman -Syyu --noconfirm --needed artools iso-profiles archlinux-keyring archlinux-mirrorlist
+         pacman-key --init
+         pacman-key --populate
+         ./artixiso/artools-workspace/iso-profiles/build.sh
         
       - name: Release
         uses: "marvinpinto/action-automatic-releases@latest"
