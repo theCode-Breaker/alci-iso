@@ -12,7 +12,7 @@ jobs:
       contents: write
 
     container:
-      image: artixlinux/runit:latest
+      image: angelofallaria/artix-runit:latest
       options: --privileged
 
     steps:
