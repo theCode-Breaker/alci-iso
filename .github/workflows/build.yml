@@ -25,7 +25,7 @@ jobs:
         run: pacman -Syu --noconfirm git squashfs-tools
 
       - name: Build ISO
-        run: bash build.sh
+        run: ./build.sh
         
       - name: Release
         uses: "marvinpinto/action-automatic-releases@latest"
