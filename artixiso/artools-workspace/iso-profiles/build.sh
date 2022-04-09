@@ -13,7 +13,7 @@ buildiso -i $init -p base -x
 artix-chroot /var/lib/artools/buildiso/base/artix/rootfs bash -c "pacman-key --init; pacman-key --populate artix; pacman -S archlinux-keyring; pacman-key --populate archlinux; pacman -Syy"
 
 printf "\033[1;33mAUR_BUILD:\033[0m Reading package list.\n"
-for package in $(cat ./AUR_PACKAGES | grep -vE "^#.*$")
+for package in $(cat ./artixiso/artools-workspace/iso-profiles/AUR_PACKAGES | grep -vE "^#.*$")
 do
   printf "\033[1;33mAUR_BUILD:\033[0m Cloning ${package}.\n"
   artix-chroot /var/lib/artools/buildiso/base/artix/rootfs \
